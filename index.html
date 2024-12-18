@@ -1,0 +1,127 @@
+<html><head>
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ff69b4, #ffff00, #00ffff);
+    background-size: 100% 400%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comic Sans MS', cursive;
+    animation: floatingBg 8s infinite linear;
+}
+
+@keyframes floatingBg {
+    0% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.center-image {
+    width: 300px;
+    height: 300px;
+    animation: bounce 2s infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+.arrow {
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    animation: floatUp 3s infinite linear;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-100vh); }
+}
+
+.description {
+    max-width: 600px;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    background: rgba(255,105,180,0.3);
+    border-radius: 15px;
+    margin: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.disclaimer {
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9em;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.up-vibes {
+    position: fixed;
+    top: 20px;
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: upVibe 1s infinite;
+}
+
+@keyframes upVibe {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+</style>
+</head>
+<body>
+
+<div class="up-vibes">↑ UP UP AND AWAY! ↑</div>
+
+<a href="https://pump.fun" target="_blank">
+    <img src="up.jpg" alt="UP" class="center-image">
+</a>
+
+<div class="description">
+    Brace yourself for a coin that knows only one direction—UP! When you think UPUPUP, think limitless skies, infinite ascents, and roller coasters of joy that never dip. Created by astronauts, enthusiasts, and possibly a few overly optimistic cats, this coin defies gravity and logic alike. It promises to make you dizzy with excitement as it spirals UP into the crypto stratosphere and beyond. Hop on the rocket, because with UPUPUP, the only way is...you guessed it...UP!
+</div>
+
+<div class="disclaimer">
+     UPdates: This site will be UPgraded faster than your portfolio goes UP! <br>
+    Socials coming soon... they're just taking the elevator instead of the rocket! 🚀 <br>
+    Remember: In a world of downs, be an UP! 📈
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function createArrow() {
+        const arrow = document.createElement('div');
+        arrow.className = 'arrow';
+        arrow.textContent = '↑';
+        arrow.style.left = Math.random() * 100 + 'vw';
+        arrow.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        document.body.appendChild(arrow);
+        
+        arrow.addEventListener('animationend', function() {
+            arrow.remove();
+        });
+    }
+
+    setInterval(createArrow, 100);
+});
+</script>
+
+</body></html>
